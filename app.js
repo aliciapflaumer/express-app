@@ -9,15 +9,15 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// to start on localhost
-app.get('/', (req, res) => res.send('Hello World, it works!'))
-
-app.listen(3000, () => console.log('Express app listening on port 3000!'))
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// Using handlebars
+// app.engine('hbs', handlebars.engine);
+// app.set('view engine', 'handlebars');
+
+// middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
